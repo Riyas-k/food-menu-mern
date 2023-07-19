@@ -1,0 +1,2 @@
+// router.put("/delete-user/:id", adminController.deleteUser);
+// router.post('/add-user',adminController.addUser);
