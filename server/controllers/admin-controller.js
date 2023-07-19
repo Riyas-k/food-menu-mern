@@ -72,6 +72,7 @@ module.exports = {
         description:description,
         category: category,
         price: price,
+        Quantity:Quantity,
         image: image,
       });
       await newMenu.save().then((response) => {
@@ -120,6 +121,16 @@ module.exports = {
         if(data){
           res.json({data:data})
         }
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  searchMenu:async(req,res)=>{
+    try {
+        const text = req.body;
+        await db.menu.findOne({name:text}).then((res)=>{
+          res.json({data:res})
+        })
     } catch (error) {
       console.log(error);
     }

@@ -83,5 +83,25 @@ module.exports = {
     } catch (error) {
       console.log(error);
     }
+  },
+  viewCategoryMenu:async(req,res)=>{
+    try {
+        const category = req.body;
+        await db.menu.findOne({category:category}).then((res)=>{
+            res.json({data:res})
+        })
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  searchMenu:async(req,res)=>{
+    try {
+        const text = req.body;
+        await db.menu.findOne({name:text}).then((res)=>{
+          res.json({data:res})
+        })
+    } catch (error) {
+      console.log(error);
+    }
   }
 };

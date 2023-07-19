@@ -13,4 +13,8 @@ router.post("/image", userController.postImage);
 
 router.get('/view-menu',auth.user,userController.viewMenu);
 
+router.post('/view-category-menu',auth.user,userController.viewCategoryMenu);
+
+router.post('/search-menu',auth.user,userController.searchMenu)
+
 module.exports = router;

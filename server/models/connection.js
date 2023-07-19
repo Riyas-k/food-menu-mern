@@ -50,6 +50,9 @@ const menuSchema = new mongoose.Schema({
       price:{
         type:Number,required:true
       },
+      Quantity:{
+          type:Number,required:true
+      },
       image:[]
 })
 
